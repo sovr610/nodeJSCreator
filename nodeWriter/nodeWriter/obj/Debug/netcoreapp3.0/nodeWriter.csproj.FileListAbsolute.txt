@@ -1,0 +1,12 @@
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\bin\Debug\netcoreapp3.0\nodeWriter.exe
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\bin\Debug\netcoreapp3.0\nodeWriter.deps.json
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\bin\Debug\netcoreapp3.0\nodeWriter.runtimeconfig.json
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\bin\Debug\netcoreapp3.0\nodeWriter.runtimeconfig.dev.json
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\bin\Debug\netcoreapp3.0\nodeWriter.dll
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\bin\Debug\netcoreapp3.0\nodeWriter.pdb
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\obj\Debug\netcoreapp3.0\nodeWriter.csprojAssemblyReference.cache
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\obj\Debug\netcoreapp3.0\nodeWriter.csproj.CoreCompileInputs.cache
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\obj\Debug\netcoreapp3.0\nodeWriter.AssemblyInfoInputs.cache
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\obj\Debug\netcoreapp3.0\nodeWriter.AssemblyInfo.cs
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\obj\Debug\netcoreapp3.0\nodeWriter.dll
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\obj\Debug\netcoreapp3.0\nodeWriter.pdb
