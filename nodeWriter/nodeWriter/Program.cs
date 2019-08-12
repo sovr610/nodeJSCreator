@@ -1,13 +1,17 @@
 ﻿using System;
+using System.IO;
 
 namespace nodeWriter
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.ReadLine();
+            writerServer server = new writerServer();
+            serverJsonObj obj = server.readJsonConfigFile();
+            string code = server.writeServerCode(obj);
+            writeProjectData proj = new writeProjectData();
+            proj.writeDependecies(obj, code);
         }
     }
 }

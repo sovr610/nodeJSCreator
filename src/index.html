@@ -45,6 +45,8 @@
             <div>
                 <h2 class="text text-center text-info">Node Server Generator</h2><br/>
                 <button id="generateNewJson" class="btn btn-success">New JSON Cofig</button>
+                <br/>
+                <button id="exec" class="btn btn-success">Create Node Server</button>
             </div>
         </div>
     </div>
@@ -61,22 +63,51 @@
                 var holder = document.getElementById('drag-file');
                 var genbutton = document.getElementById('generateNewJson');
                 var textarea_json = document.getElementById('json_data');
+                var execNode = document.getElementById("exec");
                 var path = require('path');
                 try {
 
 
-
+                    execNode.onclick = () => {
+                        var dat = textarea_json.textContent;
+                        var filename = '/nodeWriter/bin/Debug/netcoreapp3.0/temp.json';
+                        fs.exists(path.join(__dirname, filename), function(e) {
+                            console.log(e);
+                            console.log(path.join(__dirname, filename));
+                            fs.writeFile(path.join(__dirname, filename), dat, (err) => {
+                                // throws an error, you could also catch it here
+                                try {
+                                    if (err) throw err;
+                                    write();
+                                    // success case, the file was saved
+                                    console.log('');
+                                } catch (e) {
+                                    console.log(e);
+                                }
+                            });
+                        });
+                    }
 
                     genbutton.onclick = () => {
                         var template = `
                     {
                         "name": "string",
                         "hasSwaggerJDSDocs": true,
+                        "swagger":{
+                            "host":"string,
+                            "basePath": "string",
+                            "info":{
+                                "title":"string",
+                                "version":"string",
+                                "description":"string"
+                            }
+                        },
                         "DB":{
                             "DBhost": "string",
                             "DBport": 0,
                             "DBusername": "string",
                             "DBpassword": "string",
+                            "DB_name": "string",
                             "dataBase": {
                                 "mysql":true
                             }
@@ -103,7 +134,7 @@
                                     "callName": "string",
                                     "relatedDBTableID": 0,
                                     "condition":{
-                                        "checkQueryColID": [0] 
+                                        "checkQueryColID": [0]
                                     }
                                 }
                             ],
@@ -112,7 +143,7 @@
                                     "id": 0,
                                     "callName": "string",
                                     "relatedDBTableID": 0,
-                                    "dataStructureBody":{
+                                    "dataStructure":{
                                         "body":[
                                             {
                                                 "attributeName": "string",
@@ -135,7 +166,7 @@
                             ],
                             "PUT":[
                                 {
-                                    "id": "number",
+                                    "id": 0,
                                     "callName": "string",
                                     "relatedDBTableID": 0,
                                     "condition":{
@@ -160,7 +191,7 @@
                                 "data":[
                                     {
                                         "relatedDBTableID": 0,
-                                        "SBcolumnID": 0,
+                                        "DBcolumnID": 0,
                                         "DataName": "string",
                                         "DataType": "string"
                                     }
@@ -180,7 +211,7 @@
 
 
 
-                            child_process.exec(path.join(__dirname, '/platform/windows/nodeWriter.bat'), function(error, stdout, stderr) {
+                            child_process.exec(path.join(__dirname, '/nodeWriter/bin/Debug/netcoreapp3.0/nodeWriter.exe'), function(error, stdout, stderr) {
                                 console.log(stdout);
                                 console.log(error);
                             });
@@ -292,7 +323,7 @@
                     Server json layout
                     {
                         name: string,
-                        hasSwaggerJDSDocs: boolean,
+                        hasSwaggerJDocs: boolean,
                         DB:
                         {
                             DBhost: string,
@@ -380,8 +411,8 @@
                                 data:[
                                     {
                                         relatedDBTableID: number,
-                                        SBcolumnID: number,
-                                        dataName: string,
+                                        DBcolumnID: number,
+                                        DataName: string,
                                         DataType: string
                                     }
                                 ]

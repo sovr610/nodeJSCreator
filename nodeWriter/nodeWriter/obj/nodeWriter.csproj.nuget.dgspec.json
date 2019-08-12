@@ -60,6 +60,10 @@
               "version": "[3.0.0-preview3-27504-2, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            },
             "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": {
               "include": "None",
               "suppressParent": "All",

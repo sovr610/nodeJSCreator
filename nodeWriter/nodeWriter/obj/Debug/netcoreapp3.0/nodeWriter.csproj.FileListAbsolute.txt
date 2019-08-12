@@ -10,3 +10,5 @@ C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\obj\Debug\netcore
 C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\obj\Debug\netcoreapp3.0\nodeWriter.AssemblyInfo.cs
 C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\obj\Debug\netcoreapp3.0\nodeWriter.dll
 C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\obj\Debug\netcoreapp3.0\nodeWriter.pdb
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+C:\Users\Sovr6\OneDrive\Desktop\electron\nodeWriter\nodeWriter\obj\Debug\netcoreapp3.0\nodeWriter.csproj.CopyComplete
