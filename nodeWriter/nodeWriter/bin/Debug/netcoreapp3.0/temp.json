@@ -1,122 +1,110 @@
+
 {
-    "name": "test",
+    "name": "string",
     "hasSwaggerJDSDocs": true,
-    "swagger": {
-        "host": "localhost",
-        "basePath": "/",
-        "info": {
-            "title": "test_one",
-            "version": "1.0.0",
-            "description": "to test node creator"
+    "swagger":{
+        "host":"string",
+        "basePath": "string",
+        "info":{
+            "title":"string",
+            "version":"string",
+            "description":"string"
         }
     },
-    "DB": {
-        "DBhost": "localhost",
-        "DBport": 4444,
-        "DBusername": "parker",
-        "DBpassword": "Parkereli1",
-        "DB_name": "nodetest",
+    "DB":{
+        "DBhost": "string",
+        "DBport": 0,
+        "DBusername": "string",
+        "DBpassword": "string",
+        "DB_name": "string",
         "dataBase": {
-            "mysql": true
+            "mysql":true
         }
     },
-    "dataBaseLayout": {
-        "tables": [{
-            "id": 1,
-            "tableName": "user",
-            "columns": [{
-                    "columnName": "user_id",
-                    "columnDataType": "varchar(max)",
-                    "id": 1
+    "dataBaseLayout":{
+        "tables": [
+            {
+                "id": 0,
+                "tableName": "string",
+                "columns": [
+                    {
+                        "columnName": "string",
+                        "columnDataType": "string",
+                        "id": 0
+                    }
+                ]
+            }
+        ]
+    },
+    "api":{
+        "GET":[
+            {
+                "id":0,
+                "callName": "string",
+                "relatedDBTableID": 0,
+                "condition":{
+                    "checkQueryColID": [0]
+                }
+            }
+        ],
+        "POST": [
+            {
+                "id": 0,
+                "callName": "string",
+                "relatedDBTableID": 0,
+                "dataStructure":{
+                    "body":[
+                        {
+                            "attributeName": "string",
+                            "DBcolumnID": 0,
+                            "attributeType": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "DELETE":[
+            {
+                "id": 0,
+                "callName": "string",
+                "relatedDBTableID": 0,
+                "condition":{
+                    "checkQueryColID":[0]
+                }
+            }
+        ],
+        "PUT":[
+            {
+                "id": 0,
+                "callName": "string",
+                "relatedDBTableID": 0,
+                "condition":{
+                    "checkQueryColID":[0]
                 },
+                "dataStructure":{
+                    "body":[
+                        {
+                            "attributeName": "string",
+                            "DBcolumnID": 0,
+                            "attributeType": "string"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "reports":[
+        {
+            "id": 0,
+            "reportName": "string",
+            "data":[
                 {
-                    "columnName": "firstName",
-                    "columnDataType": "varchar(max)",
-                    "id": 2
-                },
-                {
-                    "columnName": "lastName",
-                    "columnDataType": "varchar(max)",
-                    "id": 3
+                    "relatedDBTableID": 0,
+                    "DBcolumnID": 0,
+                    "DataName": "string",
+                    "DataType": "string"
                 }
             ]
-        }]
-    },
-    "api": {
-        "GET": [{
-            "id": 1,
-            "callName": "user",
-            "relatedDBTableID": 1,
-            "condition": {
-                "checkQueryColID": [1]
-            }
-        }],
-        "POST": [{
-            "id": 1,
-            "callName": "user",
-            "relatedDBTableID": 1,
-            "dataStructure": {
-                "body": [{
-                        "attributeName": "user_ID",
-                        "DBcolumnID": 1,
-                        "attributeType": "string"
-                    },
-                    {
-                        "attributeName": "firstname",
-                        "DBcolumnID": 2,
-                        "attributeType": "string"
-                    },
-                    {
-                        "attributeName": "lastname",
-                        "DBcolumnID": 2,
-                        "attributeType": "string"
-                    }
-                ]
-            }
-        }],
-        "DELETE": [{
-            "id": 1,
-            "callName": "user",
-            "relatedDBTableID": 1,
-            "condition": {
-                "checkQueryColID": [1]
-            }
-        }],
-        "PUT": [{
-            "id": 1,
-            "callName": "user",
-            "relatedDBTableID": 1,
-            "condition": {
-                "checkQueryColID": [1]
-            },
-            "dataStructure": {
-                "body": [{
-                        "attributeName": "user_ID",
-                        "DBcolumnID": 1,
-                        "attributeType": "string"
-                    },
-                    {
-                        "attributeName": "firstName",
-                        "DBcolumnID": 2,
-                        "attributeType": "string"
-                    },
-                    {
-                        "attributeName": "lastname",
-                        "DBcolumnID": 3,
-                        "attributeType": "string"
-                    }
-                ]
-            }
-        }]
-    },
-    "reports": [{
-        "id": 1,
-        "reportName": "string",
-        "data": [{
-            "relatedDBTableID": 1,
-            "DBcolumnID": 2,
-            "DataName": "string",
-            "DataType": "string"
-        }]
-    }]
+        }
+    ]
 }

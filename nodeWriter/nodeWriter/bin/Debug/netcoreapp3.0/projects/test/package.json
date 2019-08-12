@@ -1,7 +1,6 @@
 {
   "name": "test",
   "version": "1.0.0",
-  "description": "",
   "main": "mysqlDB.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,5 +17,7 @@
     "pino": "^5.13.2",
     "pino-pretty": "^3.2.0",
     "swagger-jsdoc": "^3.4.0"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }

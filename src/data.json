@@ -34,7 +34,7 @@
             "id": 0,
             "callName": "string",
             "relatedDBTableID": 0,
-            "dataStructureBody": {
+            "dataStructure": {
                 "body": [{
                     "attributeName": "string",
                     "DBcolumnID": 0,

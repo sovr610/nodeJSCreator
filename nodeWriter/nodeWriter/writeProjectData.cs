@@ -25,6 +25,7 @@ namespace nodeWriter
                 {
                     System.IO.Directory.CreateDirectory(Environment.CurrentDirectory + "\\projects");
                 }
+                
                 string dir = Environment.CurrentDirectory + "\\projects\\" + server.name;
 
                 if (!Directory.Exists(dir))
@@ -109,6 +110,7 @@ namespace nodeWriter
             catch(Exception i)
             {
                 Console.WriteLine(i);
+                
             }
         }
 

@@ -12,6 +12,7 @@ namespace nodeWriter
             string code = server.writeServerCode(obj);
             writeProjectData proj = new writeProjectData();
             proj.writeDependecies(obj, code);
+            Console.ReadLine();
         }
     }
 }
