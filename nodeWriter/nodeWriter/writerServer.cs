@@ -268,6 +268,22 @@ namespace nodeWriter
                     sb.AppendLine("});");
                     sb.AppendLine(" ");
                 }
+                
+
+                foreach(var report in server.reports)
+                {
+                    try
+                    {
+                        sb.AppendLine("app.get('/" + report.reportName + "', async(req, res, next) => {");
+                        sb.AppendLine("\ttry{");
+                        sb.AppendLine("\t\tsql.customQuery(\"" + )
+                    }
+                    catch(Exception i)
+                    {
+                        Console.WriteLine(i);
+                    }
+                }
+
 
 
                 sb.AppendLine("app.listen(port, () => {");

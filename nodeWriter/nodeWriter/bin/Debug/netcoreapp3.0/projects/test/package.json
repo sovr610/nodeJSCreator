@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "cool",
   "version": "1.0.0",
   "main": "mysqlDB.js",
   "scripts": {
@@ -19,5 +19,5 @@
     "swagger-jsdoc": "^3.4.0"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "test"
 }

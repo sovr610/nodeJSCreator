@@ -38,4 +38,7 @@ bat.on('exit', (code) => {
             console.error(preText + "An error ocurred while creating the file");
             break;
     }
+
+    var window = remote.getCurrentWindow();
+    window.close();
 });

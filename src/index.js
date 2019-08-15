@@ -99,7 +99,7 @@ genbutton.onclick = () => {
     "name": "string",
     "hasSwaggerJDSDocs": true,
     "swagger":{
-        "host":"string,
+        "host":"string",
         "basePath": "string",
         "info":{
             "title":"string",
