@@ -3,7 +3,7 @@ using System.IO;
 
 namespace nodeWriter
 {
-    public class Program
+    public class ProgramCore
     {
         static void Main(string[] args)
         {

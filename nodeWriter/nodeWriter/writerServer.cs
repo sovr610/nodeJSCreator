@@ -17,7 +17,7 @@ namespace nodeWriter
                 serverJsonObj json = JsonConvert.DeserializeObject<serverJsonObj>(txt);
                 return json;
             }
-            catch(Exception i)
+            catch (Exception i)
             {
                 Console.WriteLine(i);
                 return null;
@@ -113,13 +113,13 @@ namespace nodeWriter
                     if (getAPI.condition.checkQueryColID.Length > 0)
                     {
                         string where_str = null;
-                        foreach(int colID in getAPI.condition.checkQueryColID)
+                        foreach (int colID in getAPI.condition.checkQueryColID)
                         {
 
                             DBtableColumns col_name = (from a in dt.columns
                                                        where a.id == colID
                                                        select a).ToList()[0];
-                            where_str = where_str + "'" + col_name.columnName + " = ' + req.query." + col_name.columnName + "+" ;
+                            where_str = where_str + "'" + col_name.columnName + " = ' + req.query." + col_name.columnName + "+";
                         }
                         where_str = where_str.Substring(0, where_str.Length - 1);
                         sb.AppendLine("\t\tsql.getRowsInTableWithWhere({ tableName: '" + dt.tableName + "', where: " + where_str + "}, function(data) {");
@@ -147,7 +147,7 @@ namespace nodeWriter
 
                 }
 
-                foreach(var putAPI in server.api.PUT)
+                foreach (var putAPI in server.api.PUT)
                 {
                     var callanme = putAPI.callName;
                     bodyObj[] body = putAPI.dataStructure.body;
@@ -157,7 +157,7 @@ namespace nodeWriter
                     DBtables dt = (from a in server.dataBaseLayout.tables
                                    where a.id == DBtable
                                    select a).ToList()[0];
-                    foreach(var singBody in body)
+                    foreach (var singBody in body)
                     {
                         sb.AppendLine("\t\tvar " + singBody.attributeName + " = req.body.body." + singBody.attributeName);
                     }
@@ -199,7 +199,7 @@ namespace nodeWriter
 
                 }
 
-                foreach(var postAPI in server.api.POST)
+                foreach (var postAPI in server.api.POST)
                 {
                     var callanme = postAPI.callName;
                     bodyObj[] body = postAPI.dataStructure.body;
@@ -236,7 +236,7 @@ namespace nodeWriter
 
                 }
 
-                foreach(var delAPI in server.api.DELETE)
+                foreach (var delAPI in server.api.DELETE)
                 {
                     var callanme = delAPI.callName;
                     //bodyObj[] body = delAPI.dataStructure.body;
@@ -268,21 +268,77 @@ namespace nodeWriter
                     sb.AppendLine("});");
                     sb.AppendLine(" ");
                 }
-                
 
-                foreach(var report in server.reports)
+                /*FULL JOIN Example:
+                 * 
+                 * SELECT C.FirstName, C.LastName, C.Country AS CustomerCountry, 
+                   S.Country AS SupplierCountry, S.CompanyName
+                    FROM Customer C FULL JOIN Supplier S 
+                    ON C.Country = S.Country
+                    ORDER BY C.Country, S.Country
+                */
+
+                /*RIGHT JOIN
+                 * SELECT column-names
+                FROM table-name1 RIGHT OUTER JOIN table-name2 
+                ON column-name1 = column-name2
+                WHERE condition
+                */
+
+                /*LEFT JOIN:
+                 * SELECT column-names
+                FROM table-name1 LEFT JOIN table-name2 
+                ON column-name1 = column-name2
+                WHERE condition 
+                */
+                
+                //------------------WORK ON THIS TODO------------------------------
+
+
+               /* foreach (var report in server.reports)
                 {
+                    string[] table_markers = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "u", "r", "s" };
                     try
                     {
                         sb.AppendLine("app.get('/" + report.reportName + "', async(req, res, next) => {");
                         sb.AppendLine("\ttry{");
-                        sb.AppendLine("\t\tsql.customQuery(\"" + )
+
+                        List<int> table_ids = new List<int>();
+
+                        foreach(var data in report.data)
+                        {
+                            table_ids.Add(data.relatedDBTableID);
+                        }
+                        var organizredTableIds = table_ids.Select(x => x).Distinct();
+                        int index = 0;
+
+                        List<Tuple<string, string, int>> tables = new List<Tuple<string, string, int>>();
+                        foreach (var tabID in organizredTableIds)
+                        {
+                            var tableObj = (from t in server.dataBaseLayout.tables
+                                           where t.id == tabID
+                                           select t).ToList()[0];
+                            tables.Add(Tuple.Create(tableObj.tableName, table_markers[index], tabID));
+
+                        }
+
+                        string from = " FROM ";
+                        foreach(var table_statements in tables)
+                        {
+                            //from = from + " "
+                        }
+
+
+                        string select = "SELECT ";
+                        string where = " WHERE ";
+                        
+                        //sb.AppendLine("\t\tsql.customQuery(\"" + )
                     }
-                    catch(Exception i)
+                    catch (Exception i)
                     {
                         Console.WriteLine(i);
                     }
-                }
+                }*/
 
 
 

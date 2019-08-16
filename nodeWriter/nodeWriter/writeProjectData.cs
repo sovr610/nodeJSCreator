@@ -73,21 +73,41 @@ namespace nodeWriter
                         "npm i pino && npm i express && npm i swagger-jsdoc && npm i mocha -g && npm i chai -g && npm i pino-pretty && npm i express-pino-logger && npm i cors && npm i body-parser && npm i path"
 
                     };
-
-                    if(!File.Exists(Environment.CurrentDirectory + "\\init.bat"))
+                    string[] args_vue =
                     {
-                        File.WriteAllLines(Environment.CurrentDirectory + "\\init.bat", args_one);
+                        "@echo off",
+                        "cd \"" + dir + "\"",
+                        "npm install -g @vue/cli && vue create " + server.name
+                    };
+
+                    if(File.Exists(Environment.CurrentDirectory + "\\init.bat"))
+                    {
+                        File.Delete(Environment.CurrentDirectory + "\\init.bat");
                     }
 
-                    if(!File.Exists(Environment.CurrentDirectory + "\\dep_install.bat"))
+                    File.WriteAllLines(Environment.CurrentDirectory + "\\init.bat", args_one);
+
+                    if (File.Exists(Environment.CurrentDirectory + "\\dep_install.bat"))
                     {
-                        File.WriteAllLines(Environment.CurrentDirectory + "\\dep_install.bat", args);
+                        File.Delete(Environment.CurrentDirectory + "\\dep_install.bat");
                     }
+
+                    File.WriteAllLines(Environment.CurrentDirectory + "\\dep_install.bat", args);
+
+                    if (File.Exists(Environment.CurrentDirectory + "\\vue_install.bat"))
+                    {
+                        File.Delete(Environment.CurrentDirectory + "\\vue_install.bat");
+                    }
+
+                    File.WriteAllLines(Environment.CurrentDirectory + "\\vue_install.bat", args_vue);
+
 
                     Process proc = Process.Start(Environment.CurrentDirectory + "\\init.bat");
                     proc.WaitForExit();
                     Process proc2 = Process.Start(Environment.CurrentDirectory + "\\dep_install.bat");
                     proc2.WaitForExit();
+                    Process proc3 = Process.Start(Environment.CurrentDirectory + "\\vue_install.bat");
+                    proc3.WaitForExit();
                     Console.WriteLine("all done!");
                     Console.ReadLine();
                 }

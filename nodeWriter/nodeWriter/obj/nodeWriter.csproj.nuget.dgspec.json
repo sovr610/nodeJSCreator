@@ -47,6 +47,10 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Jint": {
+              "target": "Package",
+              "version": "[2.11.58, )"
+            },
             "Microsoft.NETCore.Platforms": {
               "suppressParent": "All",
               "target": "Package",

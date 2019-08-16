@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.0": {
+      "Jint/2.11.58": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Jint.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Jint.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/3.0.0-preview3.19128.7": {
         "type": "package",
         "compile": {
@@ -54,6 +63,22 @@
     }
   },
   "libraries": {
+    "Jint/2.11.58": {
+      "sha512": "obRlPnuSmbjO7I2bfuKc1d+K1LB3xyg1Cnm2MT7PGUOHOntcdR96pDhsQnWBI5Dhxqr1Bj5/odpNi/B+AwVlPA==",
+      "type": "package",
+      "path": "jint/2.11.58",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "jint.2.11.58.nupkg.sha512",
+        "jint.nuspec",
+        "lib/net40/Jint.dll",
+        "lib/net45/Jint.dll",
+        "lib/net451/Jint.dll",
+        "lib/netstandard1.3/Jint.dll",
+        "lib/netstandard2.0/Jint.dll"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.0.0-preview3.19128.7": {
       "sha512": "4/k52fBHvM1RNPoBMik0Y3wIovsUGaTadNGH75iLGjQCJPRq2UBivEkhYrYkIFnu+K9kTYJcmXCDF6SFzMBrqA==",
       "type": "package",
@@ -199,6 +224,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
+      "Jint >= 2.11.58",
       "Microsoft.NETCore.Platforms >= 3.0.0-preview3.19128.7",
       "Microsoft.WindowsDesktop.App >= 3.0.0-preview3-27504-2",
       "Newtonsoft.Json >= 12.0.2",
@@ -252,6 +278,10 @@
     "frameworks": {
       "netcoreapp3.0": {
         "dependencies": {
+          "Jint": {
+            "target": "Package",
+            "version": "[2.11.58, )"
+          },
           "Microsoft.NETCore.Platforms": {
             "suppressParent": "All",
             "target": "Package",
